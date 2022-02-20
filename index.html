@@ -12,10 +12,14 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
-    <style></style>
+    <style>
+      .body-overflow-y {
+        overflow-y: hidden;
+      }
+    </style>
   </head>
 
-  <body class="bg-green-400">
+  <body class="bg-white">
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
       defer
@@ -193,128 +197,546 @@
       ></video>
     </section>
     <!-- Event Section -->
-    <section class="events px-4 mx-auto">
-      <section class="body-font">
+    <section class="relative events px-4 bg-gray-200 mx-auto">
+      <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-col">
-            <h1 class="text-center text-white font-medium text-2xl">Events</h1>
-            <div class="h-1 bg-gray-200 rounded overflow-hidden">
-              <div class="w-24 h-full bg-indigo-500"></div>
-            </div>
-            <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
-              <h1
-                class="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0"
-              >
-                Space The Final Frontier
-              </h1>
-              <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">
-                Street art subway tile salvia four dollar toast bitters selfies
-                quinoa yuccie synth meditation iPhone intelligentsia prism tofu.
-                Viral gochujang bitters dreamcatcher.
-              </p>
-            </div>
+          <div
+            class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
+          >
+            <h1
+              class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900"
+            >
+              Events
+            </h1>
+            <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
+              Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
+              gentrify, subway tile poke farm-to-table.
+            </p>
           </div>
           <div
-            class="flex flex-wrap sm:-m-4 -mx-4 gap-x-8 mx-auto w-full justify-center -mb-10 -mt-4"
+            class="flex flex-wrap w-full gap-y-4 justify-center text-center mx-auto gap-x-4 -m-4"
           >
-            <div class="p-4 px-4 gap md:w-1/4 rounded-md sm:mb-0 mb-6 bg-white">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img
-                  alt="content"
-                  class="object-cover object-center h-full w-full"
-                  src="https://dummyimage.com/1203x503"
-                />
-              </div>
-              <h2
-                class="text-xl text-black font-medium title-font text-gray-900 mt-5"
-              >
-                Shooting Stars
-              </h2>
-              <p class="text-base leading-relaxed text-black mt-2">
-                Swag shoivdigoitch literally meditation subway tile tumblr
-                cold-pressed. Gastropub street art beard dreamcatcher neutra,
-                ethical XOXO lumbersexual.
-              </p>
-              <a class="text-indigo-500 inline-flex items-center mt-3"
-                >Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
+            <div
+              class="xl:w-1/4 md:w-1/2 p-4 bg-white shadow-lg shadow-indigo-500/40"
+            >
+              <div class="border border-gray-200 p-6 rounded-lg">
+                <div
+                  class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-4"
                 >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="w-6 h-6"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                  </svg>
+                </div>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                  Shooting Stars
+                </h2>
+                <p class="leading-relaxed text-base">
+                  Fingerstache flexitarian street art 8-bit waist co, subway
+                  tile poke farm.
+                </p>
+                <button
+                  class="px-4 py-1 mt-3 bg-green-600 text-gray-100 rounded shadow"
+                  id="delete-btn"
+                >
+                  View Details
+                </button>
+
+                <div
+                  class="bg-black bg-opacity-50 absolute inset-0 hidden z-11 absolute justify-center items-center"
+                  id="overlay"
+                >
+                  <div
+                    class="bg-gray-200 max-w-sm py-2 px-3 rounded shadow-xl text-gray-800"
+                  >
+                    <div class="flex justify-between items-center">
+                      <h4 class="text-lg font-bold">Event Name</h4>
+                      <svg
+                        class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full"
+                        id="close-modal"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="mt-2 text-sm">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Officiis quidem doloribus deleniti vitae ab nihil
+                        maxime impedit dolores sunt enim veniam ad dignissimos
+                        maiores ipsa, assumenda neque iure, debitis perferendis
+                        facere. Culpa sapiente sequi ipsum laborum placeat nemo
+                        commodi totam. Nam debitis dignissimos nulla earum
+                        doloremque laboriosam ab ea eius molestiae, facilis
+                        exercitationem. At error maxime minima laborum, dicta
+                        deleniti quia sunt eius! Ex exercitationem ratione est
+                        natus. A molestiae voluptas fuga. Deserunt labore quo
+                        est recusandae ex sed incidunt quis quos quasi itaque
+                        debitis commodi nisi doloremque, nam sequi aperiam
+                        voluptatibus temporibus quibusdam, exercitationem sit
+                        quaerat enim, perspiciatis eius.
+                      </p>
+                    </div>
+                    <div class="mt-3 flex justify-end space-x-3">
+                      <button
+                        class="px-3 py-1 bg-red-800 text-gray-200 hover:bg-red-600 rounded"
+                      >
+                        Register
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              class="p-4 px-4 gap md:w-1/4 rounded-md sm:mb-0 mb-6 text-black bg-white"
+              class="xl:w-1/4 md:w-1/2 p-4 bg-white shadow-lg shadow-indigo-500/40"
             >
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img
-                  alt="content"
-                  class="object-cover object-center h-full w-full"
-                  src="https://dummyimage.com/1204x504"
-                />
-              </div>
-              <h2 class="text-xl font-medium title-font text-gray-900 mt-5">
-                The Catalyzer
-              </h2>
-              <p class="text-base leading-relaxed mt-2">
-                Swag shoivdigoitch literally meditation subway tile tumblr
-                cold-pressed. Gastropub street art beard dreamcatcher neutra,
-                ethical XOXO lumbersexual.
-              </p>
-              <a class="text-indigo-500 inline-flex items-center mt-3"
-                >Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
+              <div class="border border-gray-200 p-6 rounded-lg">
+                <div
+                  class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-4"
                 >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="w-6 h-6"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle cx="6" cy="6" r="3"></circle>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <path
+                      d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"
+                    ></path>
+                  </svg>
+                </div>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                  The Catalyzer
+                </h2>
+                <p class="leading-relaxed text-base">
+                  Fingerstache flexitarian street art 8-bit waist co, subway
+                  tile poke farm.
+                </p>
+                <button
+                  class="px-4 py-1 mt-3 bg-green-600 text-gray-100 rounded shadow"
+                  id="delete-btn"
+                >
+                  View Details
+                </button>
+
+                <div
+                  class="bg-black bg-opacity-50 absolute inset-0 hidden z-11 absolute justify-center items-center"
+                  id="overlay"
+                >
+                  <div
+                    class="bg-gray-200 max-w-sm py-2 px-3 rounded shadow-xl text-gray-800"
+                  >
+                    <div class="flex justify-between items-center">
+                      <h4 class="text-lg font-bold">Event Name</h4>
+                      <svg
+                        class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full"
+                        id="close-modal"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="mt-2 text-sm">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Officiis quidem doloribus deleniti vitae ab nihil
+                        maxime impedit dolores sunt enim veniam ad dignissimos
+                        maiores ipsa, assumenda neque iure, debitis perferendis
+                        facere. Culpa sapiente sequi ipsum laborum placeat nemo
+                        commodi totam. Nam debitis dignissimos nulla earum
+                        doloremque laboriosam ab ea eius molestiae, facilis
+                        exercitationem. At error maxime minima laborum, dicta
+                        deleniti quia sunt eius! Ex exercitationem ratione est
+                        natus. A molestiae voluptas fuga. Deserunt labore quo
+                        est recusandae ex sed incidunt quis quos quasi itaque
+                        debitis commodi nisi doloremque, nam sequi aperiam
+                        voluptatibus temporibus quibusdam, exercitationem sit
+                        quaerat enim, perspiciatis eius.
+                      </p>
+                    </div>
+                    <div class="mt-3 flex justify-end space-x-3">
+                      <button
+                        class="px-3 py-1 bg-red-800 text-gray-200 hover:bg-red-600 rounded"
+                      >
+                        Register
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="p-4 px-4 gap md:w-1/4 rounded-md sm:mb-0 mb-6 bg-white">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img
-                  alt="content"
-                  class="object-cover object-center h-full w-full"
-                  src="https://dummyimage.com/1205x505"
-                />
-              </div>
-              <h2 class="text-xl font-medium title-font text-gray-900 mt-5">
-                The 400 Blows
-              </h2>
-              <p class="text-base leading-relaxed mt-2">
-                Swag shoivdigoitch literally meditation subway tile tumblr
-                cold-pressed. Gastropub street art beard dreamcatcher neutra,
-                ethical XOXO lumbersexual.
-              </p>
-              <a class="text-indigo-500 inline-flex items-center mt-3"
-                >Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
+            <div
+              class="xl:w-1/4 md:w-1/2 p-4 bg-white shadow-lg shadow-indigo-500/40"
+            >
+              <div class="border border-gray-200 p-6 rounded-lg">
+                <div
+                  class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-4"
                 >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="w-6 h-6"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                  Neptune
+                </h2>
+                <p class="leading-relaxed text-base">
+                  Fingerstache flexitarian street art 8-bit waist co, subway
+                  tile poke farm.
+                </p>
+                <button
+                  class="px-4 py-1 mt-3 bg-green-600 text-gray-100 rounded shadow"
+                  id="delete-btn"
+                >
+                  View Details
+                </button>
+
+                <div
+                  class="bg-black bg-opacity-50 absolute inset-0 hidden z-11 absolute justify-center items-center"
+                  id="overlay"
+                >
+                  <div
+                    class="bg-gray-200 max-w-sm py-2 px-3 rounded shadow-xl text-gray-800"
+                  >
+                    <div class="flex justify-between items-center">
+                      <h4 class="text-lg font-bold">Event Name</h4>
+                      <svg
+                        class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full"
+                        id="close-modal"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="mt-2 text-sm">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Officiis quidem doloribus deleniti vitae ab nihil
+                        maxime impedit dolores sunt enim veniam ad dignissimos
+                        maiores ipsa, assumenda neque iure, debitis perferendis
+                        facere. Culpa sapiente sequi ipsum laborum placeat nemo
+                        commodi totam. Nam debitis dignissimos nulla earum
+                        doloremque laboriosam ab ea eius molestiae, facilis
+                        exercitationem. At error maxime minima laborum, dicta
+                        deleniti quia sunt eius! Ex exercitationem ratione est
+                        natus. A molestiae voluptas fuga. Deserunt labore quo
+                        est recusandae ex sed incidunt quis quos quasi itaque
+                        debitis commodi nisi doloremque, nam sequi aperiam
+                        voluptatibus temporibus quibusdam, exercitationem sit
+                        quaerat enim, perspiciatis eius.
+                      </p>
+                    </div>
+                    <div class="mt-3 flex justify-end space-x-3">
+                      <button
+                        class="px-3 py-1 bg-red-800 text-gray-200 hover:bg-red-600 rounded"
+                      >
+                        Register
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="xl:w-1/4 md:w-1/2 p-4 bg-white shadow-lg shadow-indigo-500/40"
+            >
+              <div class="border border-gray-200 p-6 rounded-lg">
+                <div
+                  class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-4"
+                >
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="w-6 h-6"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"
+                    ></path>
+                  </svg>
+                </div>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                  Melanchole
+                </h2>
+                <p class="leading-relaxed text-base">
+                  Fingerstache flexitarian street art 8-bit waist co, subway
+                  tile poke farm.
+                </p>
+                <button
+                  class="px-4 py-1 mt-3 bg-green-600 text-gray-100 rounded shadow"
+                  id="delete-btn"
+                >
+                  View Details
+                </button>
+
+                <div
+                  class="bg-black bg-opacity-50 absolute inset-0 hidden z-11 absolute justify-center items-center"
+                  id="overlay"
+                >
+                  <div
+                    class="bg-gray-200 max-w-sm py-2 px-3 rounded shadow-xl text-gray-800"
+                  >
+                    <div class="flex justify-between items-center">
+                      <h4 class="text-lg font-bold">Event Name</h4>
+                      <svg
+                        class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full"
+                        id="close-modal"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="mt-2 text-sm">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Officiis quidem doloribus deleniti vitae ab nihil
+                        maxime impedit dolores sunt enim veniam ad dignissimos
+                        maiores ipsa, assumenda neque iure, debitis perferendis
+                        facere. Culpa sapiente sequi ipsum laborum placeat nemo
+                        commodi totam. Nam debitis dignissimos nulla earum
+                        doloremque laboriosam ab ea eius molestiae, facilis
+                        exercitationem. At error maxime minima laborum, dicta
+                        deleniti quia sunt eius! Ex exercitationem ratione est
+                        natus. A molestiae voluptas fuga. Deserunt labore quo
+                        est recusandae ex sed incidunt quis quos quasi itaque
+                        debitis commodi nisi doloremque, nam sequi aperiam
+                        voluptatibus temporibus quibusdam, exercitationem sit
+                        quaerat enim, perspiciatis eius.
+                      </p>
+                    </div>
+                    <div class="mt-3 flex justify-end space-x-3">
+                      <button
+                        class="px-3 py-1 bg-red-800 text-gray-200 hover:bg-red-600 rounded"
+                      >
+                        Register
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="xl:w-1/4 md:w-1/2 p-4 bg-white shadow-lg shadow-indigo-500/40"
+            >
+              <div class="border border-gray-200 p-6 rounded-lg">
+                <div
+                  class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-4"
+                >
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="w-6 h-6"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
+                    ></path>
+                  </svg>
+                </div>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                  Bunker
+                </h2>
+                <p class="leading-relaxed text-base">
+                  Fingerstache flexitarian street art 8-bit waist co, subway
+                  tile poke farm.
+                </p>
+                <button
+                  class="px-4 py-1 mt-3 bg-green-600 text-gray-100 rounded shadow"
+                  id="delete-btn"
+                >
+                  View Details
+                </button>
+
+                <div
+                  class="bg-black bg-opacity-50 absolute inset-0 hidden z-11 absolute justify-center items-center"
+                  id="overlay"
+                >
+                  <div
+                    class="bg-gray-200 max-w-sm py-2 px-3 rounded shadow-xl text-gray-800"
+                  >
+                    <div class="flex justify-between items-center">
+                      <h4 class="text-lg font-bold">Event Name</h4>
+                      <svg
+                        class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full"
+                        id="close-modal"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="mt-2 text-sm">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Officiis quidem doloribus deleniti vitae ab nihil
+                        maxime impedit dolores sunt enim veniam ad dignissimos
+                        maiores ipsa, assumenda neque iure, debitis perferendis
+                        facere. Culpa sapiente sequi ipsum laborum placeat nemo
+                        commodi totam. Nam debitis dignissimos nulla earum
+                        doloremque laboriosam ab ea eius molestiae, facilis
+                        exercitationem. At error maxime minima laborum, dicta
+                        deleniti quia sunt eius! Ex exercitationem ratione est
+                        natus. A molestiae voluptas fuga. Deserunt labore quo
+                        est recusandae ex sed incidunt quis quos quasi itaque
+                        debitis commodi nisi doloremque, nam sequi aperiam
+                        voluptatibus temporibus quibusdam, exercitationem sit
+                        quaerat enim, perspiciatis eius.
+                      </p>
+                    </div>
+                    <div class="mt-3 flex justify-end space-x-3">
+                      <button
+                        class="px-3 py-1 bg-red-800 text-gray-200 hover:bg-red-600 rounded"
+                      >
+                        Register
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="xl:w-1/4 md:w-1/2 p-4 bg-white shadow-lg shadow-indigo-500/40"
+            >
+              <div class="border border-gray-200 p-6 rounded-lg">
+                <div
+                  class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-4"
+                >
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="w-6 h-6"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                    ></path>
+                  </svg>
+                </div>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                  Ramona Falls
+                </h2>
+                <p class="leading-relaxed text-base">
+                  Fingerstache flexitarian street art 8-bit waist co, subway
+                  tile poke farm.
+                </p>
+                <button
+                  class="px-4 py-1 mt-3 bg-green-600 text-gray-100 rounded shadow"
+                  id="delete-btn"
+                >
+                  View Details
+                </button>
+
+                <div
+                  class="bg-black bg-opacity-50 absolute inset-0 hidden z-11 absolute justify-center items-center"
+                  id="overlay"
+                >
+                  <div
+                    class="bg-gray-200 max-w-sm py-2 px-3 rounded shadow-xl text-gray-800"
+                  >
+                    <div class="flex justify-between items-center">
+                      <h4 class="text-lg font-bold">Event Name</h4>
+                      <svg
+                        class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full"
+                        id="close-modal"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="mt-2 text-sm">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Officiis quidem doloribus deleniti vitae ab nihil
+                        maxime impedit dolores sunt enim veniam ad dignissimos
+                        maiores ipsa, assumenda neque iure, debitis perferendis
+                        facere. Culpa sapiente sequi ipsum laborum placeat nemo
+                        commodi totam. Nam debitis dignissimos nulla earum
+                        doloremque laboriosam ab ea eius molestiae, facilis
+                        exercitationem. At error maxime minima laborum, dicta
+                        deleniti quia sunt eius! Ex exercitationem ratione est
+                        natus. A molestiae voluptas fuga. Deserunt labore quo
+                        est recusandae ex sed incidunt quis quos quasi itaque
+                        debitis commodi nisi doloremque, nam sequi aperiam
+                        voluptatibus temporibus quibusdam, exercitationem sit
+                        quaerat enim, perspiciatis eius.
+                      </p>
+                    </div>
+                    <div class="mt-3 flex justify-end space-x-3">
+                      <button
+                        class="px-3 py-1 bg-red-800 text-gray-200 hover:bg-red-600 rounded"
+                      >
+                        Register
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <button
+            class="flex mx-auto mt-16 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"
+          >
+            Button
+          </button>
         </div>
       </section>
     </section>
@@ -329,6 +751,31 @@
             list.classList.remove("top-[80px]"),
             list.classList.remove("opacity-100"));
       }
+      window.addEventListener("DOMContentLoaded", () => {
+        const overlay = document.querySelector("#overlay");
+        const delBtn = document.querySelector("#delete-btn");
+        const closeBtn = document.querySelector("#close-modal");
+        const body = document.querySelector("body");
+        const toggleModal = () => {
+          overlay.classList.toggle("hidden");
+          overlay.classList.toggle("flex");
+          body.classList.toggle("body-overflow-y");
+        };
+
+        delBtn.addEventListener("click", toggleModal);
+
+        closeBtn.addEventListener("click", toggleModal);
+      });
     </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
