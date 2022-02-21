@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
     delBtn5.addEventListener("click", toggleModal);
     delBtn6.addEventListener("click", toggleModal);
 
-    closeBtn1.addEventListener("click", toggleModal);
+  closeBtn1.addEventListener("click", toggleModal);
   closeBtn2.addEventListener("click", toggleModal);
   closeBtn3.addEventListener("click", toggleModal);
   closeBtn4.addEventListener("click", toggleModal);
