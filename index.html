@@ -108,6 +108,16 @@
           width: 5rem;
         }
       }
+      @media screen and (max-width: 450px) {
+        .gap {
+          row-gap: 15rem !important;
+        }
+      }
+      @media screen and (max-width: 380px) {
+        .gap {
+          row-gap: 10rem !important;
+        }
+      }
     </style>
   </head>
 
@@ -281,7 +291,7 @@
       </div>
     </div>
     <!-- Hero Section -->
-    <section class="flex flex-col justify-center w-full h-auto mx-auto">
+    <section class="flex flex-col justify-center w-full h-auto">
       <video
         src="./Assets/Hero-Section-Video.mp4"
         autoplay
@@ -289,7 +299,7 @@
       ></video>
     </section>
     <!-- Event Section -->
-    <section class="relative px-4 bg-gray-200 mx-auto">
+    <section class="relative px-4 bg-gray-200 p-5 mx-auto md:px-12">
       <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
           <div
@@ -306,7 +316,7 @@
             </p>
           </div>
           <div
-            class="flex flex-wrap w-full gap-y-24 justify-around text-center mx-auto mt-24 gap-x-4 -m-4"
+            class="flex flex-wrap w-full gap-y-24 justify-around text-center mx-auto mt-24 gap-x-4 -m-4 gap"
           >
             <div
               class="xl:w-1/4 md:w-1/2 p-4 bg-white shadow-lg shadow-green-500/40"
@@ -861,7 +871,7 @@
       </section>
     </section>
     <!-- Project Section -->
-    <section class="project px-4">
+    <section class="project p-5 mx-auto md:px-12">
       <!-- Project Container -->
       <div class="container px-5 py-24 mx-auto">
         <div
@@ -878,7 +888,7 @@
           </p>
         </div>
         <div
-          class="flex flex-wrap gap-y-24 justify-around text-center mx-auto mt-24 gap-x-4 -m-4"
+          class="flex flex-wrap gap-y-24 justify-around text-center mx-auto mt-24 gap-x-4 -m-4 gap"
         >
           <div
             class="xl:w-1/4 md:w-1/2 p-4 bg-white shadow-lg shadow-green-500/40"
@@ -1441,7 +1451,7 @@
       </div>
     </section>
     <!-- Volunteer Section -->
-    <section class="relative px-4 bg-gray-300 mx-auto">
+    <!-- <section class="relative px-4 bg-gray-300 p-5 mx-auto md:px-12">
       <section class="text-gray-600 body-font pb-2.5">
         <div
           class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
@@ -1458,7 +1468,6 @@
         </div>
         <div class="marquee px-4">
           <div class="marquee-content">
-            <!-- Images -->
             <div class="slide">
               <img
                 src="https://svgur.com/i/eH3.svg"
@@ -1566,8 +1575,6 @@
                 alt=""
               />
             </div>
-
-            <!-- Images Repeated -->
             <div class="slide">
               <img
                 src="https://svgur.com/i/eH3.svg"
@@ -1683,9 +1690,9 @@
           Become Volunteer
         </button>
       </section>
-    </section>
+    </section> -->
     <!-- Testimonial Section -->
-    <section class="relative px-4 mx-auto">
+    <section class="relative bg-gray-200 px-4 p-5 mx-auto md:px-12">
       <section class="text-gray-600 body-font">
         <div
           class="flex flex-wrap w-full my-10 flex-col items-center text-center"
@@ -1786,7 +1793,7 @@
       </section>
     </section>
     <!-- Footer -->
-    <footer class="bg-gray-200 text-white w-full px-4 mx-auto body-font">
+    <footer class="text-white w-full px-4 mx-auto body-font">
       <div class="container px-5 py-24 mx-auto">
         <div
           class="flex flex-wrap justify-center items-center md:text-left text-center -mb-10 -mx-4"
