@@ -94,8 +94,8 @@
         border: 2px solid #eee;
       }
 
-      @media (max-width: 600px) {
-        html {
+      @media (max-width: 786px) {
+        /* html {
           font-size: 12px;
         }
         :root {
@@ -106,15 +106,27 @@
         .marquee:before,
         .marquee:after {
           width: 5rem;
+        } */
+        .gap {
+          margin-top: 18rem !important;
+          row-gap: 18rem !important;
+        }
+      }
+      @media (max-width: 586px) {
+        .gap {
+          margin-top: 16rem !important;
+          row-gap: 16rem !important;
         }
       }
       @media screen and (max-width: 450px) {
         .gap {
+          margin-top: 15rem !important;
           row-gap: 15rem !important;
         }
       }
       @media screen and (max-width: 380px) {
         .gap {
+          margin-top: 10rem !important;
           row-gap: 10rem !important;
         }
       }
