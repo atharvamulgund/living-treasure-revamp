@@ -25,37 +25,37 @@ window.addEventListener("DOMContentLoaded", () => {
     const toggleModal1 = () => {
       overlay1.classList.toggle("hidden");
       overlay1.classList.toggle("flex");
-      body.classList.toggle("body-overflow-y");
+      // body.classList.toggle("body-overflow-y");
     };
 
     const toggleModal2 = () => {
       overlay1.classList.toggle("hidden");
       overlay1.classList.toggle("flex");
-      body.classList.toggle("body-overflow-y");
+      // body.classList.toggle("body-overflow-y");
     };
     
     const toggleModal3 = () => {
       overlay3.classList.toggle("hidden");
       overlay3.classList.toggle("flex");
-      body.classList.toggle("body-overflow-y");
+      // body.classList.toggle("body-overflow-y");
     };
 
     const toggleModal4 = () => {
       overlay4.classList.toggle("hidden");
       overlay4.classList.toggle("flex");
-      body.classList.toggle("body-overflow-y");
+      // body.classList.toggle("body-overflow-y");
     };
 
     const toggleModal5 = () => {
       overlay5.classList.toggle("hidden");
       overlay5.classList.toggle("flex");
-      body.classList.toggle("body-overflow-y");
+      // body.classList.toggle("body-overflow-y");
     };
 
     const toggleModal6 = () => {
       overlay6.classList.toggle("hidden");
       overlay6.classList.toggle("flex");
-      body.classList.toggle("body-overflow-y");
+      // body.classList.toggle("body-overflow-y");
     };
 
     delBtn1.addEventListener("click", toggleModal1);
