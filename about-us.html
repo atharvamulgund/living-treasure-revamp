@@ -122,55 +122,12 @@
             </div>
           </div>
 
-          <div
-            @click.away="open = false"
-            class="relative"
-            x-data="{ open: false }"
+          <a
+            class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            href="./project.html"
+            >Projects</a
           >
-            <button
-              @click="open = !open"
-              class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-            >
-              <span>Projects</span>
-              <svg
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                :class="{'rotate-180': open, 'rotate-0': !open}"
-                class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
-            <div
-              x-show="open"
-              x-transition:enter="transition ease-out duration-100"
-              x-transition:enter-start="transform opacity-0 scale-95"
-              x-transition:enter-end="transform opacity-100 scale-100"
-              x-transition:leave="transition ease-in duration-75"
-              x-transition:leave-start="transform opacity-100 scale-100"
-              x-transition:leave-end="transform opacity-0 scale-95"
-              class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
-            >
-              <div
-                class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800"
-              >
-                <a
-                  class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                  href="./project.html"
-                  >Project</a
-                >
-                <a
-                  class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                  href="#"
-                  >Project Details
-                </a>
-              </div>
-            </div>
-          </div>
+
           <a
             class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
             href="#"
@@ -188,150 +145,152 @@
     <div class="h-48 flex justify-center items-center bg-neutral-100">
       <h1 class="font-bold tracking-wider text-4xl">About Us</h1>
     </div>
-    <section class="text-gray-600 p-5 mx-auto md:px-12">
-      <div class="container flex md:flex-row flex-col items-center">
-        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-          <img
-            class="object-cover object-center rounded"
-            alt="hero"
-            src="https://dummyimage.com/720x600"
-          />
-        </div>
-        <div
-          class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start items-center text-left"
-        >
-          <h1
-            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
+    <div class="flex justify-center items-center flex-col">
+      <section class="text-gray-600 p-5 mx-auto md:px-12">
+        <div class="container flex md:flex-row flex-col items-center">
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <img
+              class="object-cover object-center rounded"
+              alt="hero"
+              src="https://dummyimage.com/720x600"
+            />
+          </div>
+          <div
+            class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start items-center text-left"
           >
-            About The Living Treasure
-          </h1>
-          <p>
-            <span class="uppercase font-bold">the living treasure </span>is a
-            registered non-profit, non-governmental organization having the twin
-            objectives of:
-          </p>
-          <ol class="list-decimal list-inside p-[revert]">
-            <li>Personality Development through Self-Evaluation.</li>
-            <li>
-              Helping the needy, less privileged brethren of our society, by
-              providing them with the basic services without any discrimination
-              of religion, caste and creed.
-            </li>
-          </ol>
-          <p class="pt-3">
-            To achieve the above objectives we organize the following:
-          </p>
-          <ol class="list-decimal list-inside p-[revert]">
-            <li>Mind Elevation Programmes.</li>
-            <li>
-              Public seminars, workshops, discourses and other programmes for
-              Self-Development, Growth and Self- Transformation.
-            </li>
-            <li>
-              Providing FREE basic medical, educational facilities and all types
-              of counseling services.
-            </li>
-            <li>
-              Camps for blood donation, vaccination and diagnostic
-              investigations, etc.
-            </li>
-          </ol>
+            <h1
+              class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
+            >
+              About The Living Treasure
+            </h1>
+            <p>
+              <span class="uppercase font-bold">the living treasure </span>is a
+              registered non-profit, non-governmental organization having the
+              twin objectives of:
+            </p>
+            <ol class="list-decimal list-inside p-[revert]">
+              <li>Personality Development through Self-Evaluation.</li>
+              <li>
+                Helping the needy, less privileged brethren of our society, by
+                providing them with the basic services without any
+                discrimination of religion, caste and creed.
+              </li>
+            </ol>
+            <p class="pt-3">
+              To achieve the above objectives we organize the following:
+            </p>
+            <ol class="list-decimal list-inside p-[revert]">
+              <li>Mind Elevation Programmes.</li>
+              <li>
+                Public seminars, workshops, discourses and other programmes for
+                Self-Development, Growth and Self- Transformation.
+              </li>
+              <li>
+                Providing FREE basic medical, educational facilities and all
+                types of counseling services.
+              </li>
+              <li>
+                Camps for blood donation, vaccination and diagnostic
+                investigations, etc.
+              </li>
+            </ol>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="text-gray-600 p-5 mx-auto md:px-12">
-      <div class="container flex md:flex-row flex-col-reverse items-center">
-        <div
-          class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start mb-16 md:mb-0 items-center text-left"
-        >
-          <h1
-            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
+      </section>
+      <section class="text-gray-600 p-5 mx-auto md:px-12">
+        <div class="container flex md:flex-row flex-col-reverse items-center">
+          <div
+            class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start mb-16 md:mb-0 items-center text-left"
           >
-            About the Logo
-          </h1>
-          <p>
-            Two Leaves shown in the logo of the living treasure Depict two
-            extreme states of one's mind. One leaf is shown as totally dry with
-            only skeleton left, depicting a dry state of mind, whereas the other
-            leaf is fully green and full of life.
-          </p>
-          <p>
-            Now, the dry state of mind means a mind without love,
-            care,hospitality, concern and simplicity. A person possessing
-            dominating, adamant attitudes is always depressed, confused and
-            destructive in habits. So this kind of personality is of no use to
-            the society, except the hope that transformation is possible with
-            proper nurturing and care.One thing is very clear that this
-            dry-looking leaf was not born dry, rather it was fresh looking,
-            fully green, very pleasing, attractive and full of life at the time
-            of birth. But with the passage of time, onslaughts of surroundings
-            and environment it shed off from the tree which had to take care of
-            its well-being in every way, irrespective of whether the leaf is
-            thankful or thankless, agreeing or disagreeing, surrendering or not
-            before the supremacy of the tree.
-          </p>
-          <p>
-            But now once broken from the secured system, the leaf is sucked out
-            of its beauty, charm, freshness and life And in a matter of time it
-            loses its identity forever and gets accumulated with the dust and
-            dirt of the ground. And once broken-off there is no way it could be
-            rejoined with the Creator - the tree. But, fortunately for the human
-            mind, there is a hope, there is a chance, a reunion is possible, a
-            transformation is possible, if one decides to shed off one's heavy
-            weight of egoism, dominating attitudes, anger, etc. And surrendering
-            before the master of this universe i.e. the system under which this
-            universe is working for millions of years and will continue in the
-            same way.
-          </p>
-          <p class="text-center font-bold w-full py-3">
-            "AAD SACH JUGAADH SACH HAI BI SACH NANAK HOSI BHI SACH".
-          </p>
-          <p>
-            One has to activate one's thought process perfectly in unison with
-            this system by constantly working with the laws of nature which
-            always surround us. So, a life full of youth, full of beauty, full
-            of the freshness and full of freedom is possible, if we decide to
-            work with The Truth, whichAs a workshop is doing and turning life
-            into a well blossomed GREEN LEAF.
-          </p>
+            <h1
+              class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
+            >
+              About the Logo
+            </h1>
+            <p>
+              Two Leaves shown in the logo of the living treasure Depict two
+              extreme states of one's mind. One leaf is shown as totally dry
+              with only skeleton left, depicting a dry state of mind, whereas
+              the other leaf is fully green and full of life.
+            </p>
+            <p>
+              Now, the dry state of mind means a mind without love,
+              care,hospitality, concern and simplicity. A person possessing
+              dominating, adamant attitudes is always depressed, confused and
+              destructive in habits. So this kind of personality is of no use to
+              the society, except the hope that transformation is possible with
+              proper nurturing and care.One thing is very clear that this
+              dry-looking leaf was not born dry, rather it was fresh looking,
+              fully green, very pleasing, attractive and full of life at the
+              time of birth. But with the passage of time, onslaughts of
+              surroundings and environment it shed off from the tree which had
+              to take care of its well-being in every way, irrespective of
+              whether the leaf is thankful or thankless, agreeing or
+              disagreeing, surrendering or not before the supremacy of the tree.
+            </p>
+            <p>
+              But now once broken from the secured system, the leaf is sucked
+              out of its beauty, charm, freshness and life And in a matter of
+              time it loses its identity forever and gets accumulated with the
+              dust and dirt of the ground. And once broken-off there is no way
+              it could be rejoined with the Creator - the tree. But, fortunately
+              for the human mind, there is a hope, there is a chance, a reunion
+              is possible, a transformation is possible, if one decides to shed
+              off one's heavy weight of egoism, dominating attitudes, anger,
+              etc. And surrendering before the master of this universe i.e. the
+              system under which this universe is working for millions of years
+              and will continue in the same way.
+            </p>
+            <p class="text-center font-bold w-full py-3">
+              "AAD SACH JUGAADH SACH HAI BI SACH NANAK HOSI BHI SACH".
+            </p>
+            <p>
+              One has to activate one's thought process perfectly in unison with
+              this system by constantly working with the laws of nature which
+              always surround us. So, a life full of youth, full of beauty, full
+              of the freshness and full of freedom is possible, if we decide to
+              work with The Truth, whichAs a workshop is doing and turning life
+              into a well blossomed GREEN LEAF.
+            </p>
+          </div>
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img
+              class="object-cover object-center rounded"
+              alt="hero"
+              src="https://dummyimage.com/720x600"
+            />
+          </div>
         </div>
-        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-          <img
-            class="object-cover object-center rounded"
-            alt="hero"
-            src="https://dummyimage.com/720x600"
-          />
-        </div>
-      </div>
-    </section>
-    <section class="text-gray-600 p-5 mx-auto md:px-12">
-      <div class="container flex md:flex-row flex-col items-center">
-        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-          <img
-            class="object-cover object-center rounded"
-            alt="hero"
-            src="https://dummyimage.com/720x600"
-          />
-        </div>
-        <div
-          class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start items-center text-left"
-        >
-          <h1
-            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
+      </section>
+      <section class="text-gray-600 p-5 mx-auto md:px-12">
+        <div class="container flex md:flex-row flex-col items-center">
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <img
+              class="object-cover object-center rounded"
+              alt="hero"
+              src="https://dummyimage.com/720x600"
+            />
+          </div>
+          <div
+            class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start items-center text-left"
           >
-            Our Vision , Mission
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            neque libero, pulvinar et elementum quis, facilisis eu ante. Mauris
-            non placerat sapien. Pellentesque tempor arcu non odio scelerisque
-            ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Nam varius eros consequat auctor gravida. Fusce tristique
-            lacus at urna sollicitudin pulvinar. Suspendisse hendrerit ultrices
-            mauris.
-          </p>
+            <h1
+              class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
+            >
+              Our Vision , Mission
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              neque libero, pulvinar et elementum quis, facilisis eu ante.
+              Mauris non placerat sapien. Pellentesque tempor arcu non odio
+              scelerisque ullamcorper. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Nam varius eros consequat auctor gravida. Fusce
+              tristique lacus at urna sollicitudin pulvinar. Suspendisse
+              hendrerit ultrices mauris.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </body>
 </html>
