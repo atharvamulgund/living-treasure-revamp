@@ -90,3 +90,10 @@ const openModal = (modalData) => {
 const closeModal = () => {
   overlay.close();
 };
+
+const modal = document.querySelector("#modal")
+const modalBtn = () =>{
+  modal.innerHTML='Thank You For Registering'
+}
+
+
