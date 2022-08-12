@@ -91,9 +91,51 @@ const closeModal = () => {
   overlay.close();
 };
 
-const modal = document.querySelector("#modal")
-const modalBtn = () =>{
-  modal.innerHTML='Thank You For Registering'
+const modal = document.querySelector("#modal");
+const modalBtn = () => {
+  modal.innerHTML = "Thank You For Registering";
+};
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function handleDropdown(buttonClicked) {
+  if (buttonClicked === "dropdown-btn-1") {
+    document.getElementById("dropdown-btn-1").classList.toggle("show");
+    document.getElementById("arrow-icon-1").classList.toggle("rotate-icon");
+    document.getElementById("arrow-icon-1").style.transition = "all 0.2s";
+  }
+
+  if (buttonClicked === "dropdown-btn-2") {
+    document.getElementById("dropdown-btn-2").classList.toggle("show");
+    document.getElementById("arrow-icon-2").classList.toggle("rotate-icon");
+    document.getElementById("arrow-icon-2").style.transition = "all 0.2s";
+  }
 }
 
-
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn1")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content-1");
+    var icon = document.getElementById("arrow-icon-1");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+        icon.classList.remove("rotate-icon");
+      }
+    }
+  }
+  if (!event.target.matches(".dropbtn2")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content-2");
+    var icon = document.getElementById("arrow-icon-2");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+        icon.classList.remove("rotate-icon");
+      }
+    }
+  }
+};
